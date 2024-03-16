@@ -13,3 +13,9 @@ jobs:
         run: echo "Hello, world!"
       - name: env
         run: echo ${{ github.ref }}
+  tags:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo "tag condition"
