@@ -1,0 +1,15 @@
+name: publish
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "*"
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo "Hello, world!"
+      - name: env
+        run: echo ${{ github.ref }}
